@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+class Person {
+protected:
+    std::string name;
+public:
+    Person(const std::string& n) : name(n) {}
+};
+
+class Student : public Person {
+private:
+    int studentID;
+public:
+    Student(int id, const std::string& n) : Person(n), studentID(id) {}
+    void display() { 
+        std::cout << "ID: " << studentID << ", Name: " << name << std::endl;
+    }
+};
+
+int main() {
+    Student s(2023001, "Layla Khalid");
+    s.display();
+    return 0;
+}
+    
